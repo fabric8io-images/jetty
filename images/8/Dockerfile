@@ -7,7 +7,7 @@ EXPOSE 8080
 ENV JETTY_VERSION 8.1.19.v20160209
 ENV DEPLOY_DIR /maven
 
-RUN curl http://download.eclipse.org/jetty/${JETTY_VERSION}/dist/jetty-distribution-${JETTY_VERSION}.tar.gz -o /tmp/jetty.tar.gz \
+RUN curl http://repo1.maven.org/maven2/org/eclipse/jetty/jetty-distribution/${JETTY_VERSION}/jetty-distribution-${JETTY_VERSION}.tar.gz -o /tmp/jetty.tar.gz \
  && cd /opt && tar zxvf /tmp/jetty.tar.gz \
  && ln -s /opt/jetty-distribution-${JETTY_VERSION} /opt/jetty \
  && rm /tmp/jetty.tar.gz

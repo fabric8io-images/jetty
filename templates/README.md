@@ -16,4 +16,4 @@ Features:
 * Java Base Image: **{{= fp.config.version.from.image }}**
 * Port: **8080**
 * Command: `/opt/jetty/bin/deploy-and-run.sh` which links .war files from */maven* to */opt/jetty/webapps* and then calls `/opt/jetty/bin/jetty.sh run`
-* Sets `-Djava.security.egd=file:/dev/./urandom` for faster startup times (though a bit less secure)
+* Sets `-Djava.security.egd=file:/dev/./urandom` for faster startup times (though a bit less secure).
