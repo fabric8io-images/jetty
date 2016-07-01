@@ -1,0 +1,20 @@
+---
+fish-pepper:
+  params:
+    - "version"
+  build: "1.1.0"
+  name: "fabric8/jetty"
+
+config:
+  version:
+    default:
+      downloadUrl: "http://download.eclipse.org/jetty/${JETTY_VERSION}/dist/jetty-distribution-${JETTY_VERSION}.tar.gz"
+      from:
+        image: "fabric8/java-centos-openjdk8-jre:1.1.4"
+        repo:  "https://github.com/fabric8io-images/java/tree/master/images/centos/openjdk8/jre"
+    9:
+      version: "9.3.10.v20160621"
+    8:
+      version: "8.1.19.v20160209"
+    7:
+      version: "7.6.19.v20160209"

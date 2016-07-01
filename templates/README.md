@@ -1,0 +1,19 @@
+## Jetty {{= fp.config.version.version}}
+
+A simple docker build for installing a vanilla Jetty {{= fp.config.version.version}} below */opt/jetty*. It comes out of the box and is intended for use in integration tests
+
+During startup a directory specified by the environment variable `DEPLOY_DIR` (*/maven* by default) is checked for .war files. If there are any, they are linked into the *webapps/* directory for automatic deployment. This plays nicely with the Docker maven plugin from https://github.com/rhuss/docker-maven-plugin/ and its 'assembly' mode which can automatically create Docker data container with Maven artifacts exposed from a directory */maven*.
+
+### Agent Bond
+
+For this image [Agent Bond](https://github.com/fabric8io/agent-bond) is enabled. Agent Bond exports metrics from [Jolokia](http://www.jolokia.org) and [jmx_exporter](https://github.com/prometheus/jmx_exporter).
+
+Please refer to the base image's [documentation]({{= fp.config.version.from.repo }}) for available options to tune the Java JVM.
+
+Features:
+
+* Jetty Version: **{{= fp.config.version.version}}**
+* Java Base Image: **{{= fp.config.version.from.image }}**
+* Port: **8080**
+* Command: `/opt/jetty/bin/deploy-and-run.sh` which links .war files from */maven* to */opt/jetty/webapps* and then calls `/opt/jetty/bin/jetty.sh run`
+* Sets `-Djava.security.egd=file:/dev/./urandom` for faster startup times (though a bit less secure)
