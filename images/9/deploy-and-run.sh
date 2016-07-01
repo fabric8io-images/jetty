@@ -1,5 +1,5 @@
 #!/bin/sh
-DIR=${DEPLOY_DIR:-/maven}
+DIR=${DEPLOY_DIR:-/deployments}
 echo "Checking *.war in $DIR"
 if [ -d $DIR ]; then
   for i in $DIR/*.war; do
