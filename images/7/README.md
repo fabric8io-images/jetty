@@ -13,7 +13,7 @@ Please refer to the base image's [documentation](https://github.com/fabric8io-im
 Features:
 
 * Jetty Version: **7.6.19.v20160209**
-* Java Base Image: **fabric8/java-centos-openjdk8-jre:1.1.4**
+* Java Base Image: **fabric8/java-centos-openjdk8-jre:1.1.5**
 * Port: **8080**
 * Command: `/opt/jetty/bin/deploy-and-run.sh` which links .war files from */maven* to */opt/jetty/webapps* and then calls `/opt/jetty/bin/jetty.sh run`
 * Sets `-Djava.security.egd=file:/dev/./urandom` for faster startup times (though a bit less secure).
