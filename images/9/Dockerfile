@@ -22,7 +22,6 @@ ADD jmx_exporter_config.yml /opt/agent-bond/
 EXPOSE 8778 9779
 
 
-
 RUN curl http://repo1.maven.org/maven2/org/eclipse/jetty/jetty-distribution/${JETTY_VERSION}/jetty-distribution-${JETTY_VERSION}.tar.gz -o /tmp/jetty.tar.gz \
  && cd /opt && tar zxvf /tmp/jetty.tar.gz \
  && ln -s /opt/jetty-distribution-${JETTY_VERSION} /opt/jetty \
@@ -34,10 +33,10 @@ ADD deploy-and-run.sh /opt/jetty/bin/
 ADD jetty-logging.xml /opt/jetty/etc/
 RUN chmod a+x /opt/jetty/bin/deploy-and-run.sh
 
-# java-container-options
-# Add java-container-options to /opt/jetty/bin and make it executable
-COPY java-container-options /opt/jetty/bin/java-container-options
-RUN chmod 755 /opt/jetty/bin/java-container-options
+# java-container-options for container specific java startup options
+# Add java-container-options to /opt and make it executable
+COPY java-container-options /opt/java-container-options
+RUN chmod 755 /opt/java-container-options
 
 
 ENV JETTY_HOME /opt/jetty
