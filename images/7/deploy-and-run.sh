@@ -1,4 +1,5 @@
 #!/bin/sh
+
 DIR=${DEPLOY_DIR:-/deployments}
 echo "Checking *.war in $DIR"
 if [ -d $DIR ]; then
@@ -8,5 +9,6 @@ if [ -d $DIR ]; then
      ln -s $i /opt/jetty/webapps/$file
   done
 fi
-export JAVA_OPTIONS="$JAVA_OPTIONS $(/opt/run-java-options) -Djava.security.egd=file:/dev/./urandom"
+
+export JAVA_OPTIONS="$JAVA_OPTIONS $(/opt/run-java-options) $(/opt/jetty/bin/java-container-options) -Djava.security.egd=file:/dev/./urandom"
 /usr/bin/env bash /opt/jetty/bin/jetty.sh run

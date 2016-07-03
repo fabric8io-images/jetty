@@ -11,4 +11,4 @@ npm -g install fish-pepper
 fish-pepper
 ```
 
-All server images are enabled with `agent-bond` since they are derived from the base images described above. You can use the same environment variables to setup the agents.
+This imgage includs [agent-bond](https://github.com/fabric8io/agent-bond) which combines [Jolokia](http://www.jolokia.org) and [jmx_exporter](https://github.com/prometheus/jmx_exporter).
