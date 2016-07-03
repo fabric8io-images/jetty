@@ -10,7 +10,6 @@ ENV JAVA /usr/bin/java
 
 USER root
 
-# Agent bond
 {{= fp.block("agent-bond", "install", { dest: "/opt/run-java-options" }) }}
 
 RUN curl {{= fp.config.version.downloadUrl }} -o /tmp/jetty.tar.gz \
@@ -24,7 +23,6 @@ ADD deploy-and-run.sh /opt/jetty/bin/
 ADD jetty-logging.xml /opt/jetty/etc/
 RUN chmod a+x /opt/jetty/bin/deploy-and-run.sh
 
-# java-container-options for container specific java startup options
 {{= fp.block("run-java-sh","copy-java-container-options",{dest: "/opt/"}) }}
 
 ENV JETTY_HOME /opt/jetty

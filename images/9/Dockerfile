@@ -10,7 +10,6 @@ ENV JAVA /usr/bin/java
 
 USER root
 
-# Agent bond
 # Agent bond including Jolokia and jmx_exporter
 ADD agent-bond-opts /opt/run-java-options
 RUN mkdir -p /opt/agent-bond \
@@ -33,7 +32,6 @@ ADD deploy-and-run.sh /opt/jetty/bin/
 ADD jetty-logging.xml /opt/jetty/etc/
 RUN chmod a+x /opt/jetty/bin/deploy-and-run.sh
 
-# java-container-options for container specific java startup options
 # Add java-container-options to /opt and make it executable
 COPY java-container-options /opt/java-container-options
 RUN chmod 755 /opt/java-container-options
