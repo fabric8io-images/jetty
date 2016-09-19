@@ -32,9 +32,9 @@ ADD deploy-and-run.sh /opt/jetty/bin/
 ADD jetty-logging.xml /opt/jetty/etc/
 RUN chmod a+x /opt/jetty/bin/deploy-and-run.sh
 
-# Add java-container-options to /opt and make it executable
-COPY java-container-options /opt/java-container-options
-RUN chmod 755 /opt/java-container-options
+# Add debug-options and java-container-options to /opt and make it executable
+COPY debug-options java-container-options /opt/
+RUN chmod 755 /opt/debug-options /opt/java-container-options
 
 
 ENV JETTY_HOME /opt/jetty

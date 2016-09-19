@@ -10,5 +10,5 @@ if [ -d $DIR ]; then
   done
 fi
 
-export JAVA_OPTIONS="$JAVA_OPTIONS $(/opt/run-java-options) $(/opt/java-container-options) -Djava.security.egd=file:/dev/./urandom"
+export JAVA_OPTIONS="$JAVA_OPTIONS $(/opt/run-java-options) $(/opt/java-container-options) $(/opt/debug-options) -Djava.security.egd=file:/dev/./urandom"
 /usr/bin/env bash /opt/jetty/bin/jetty.sh run
