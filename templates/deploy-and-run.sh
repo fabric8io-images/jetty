@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Fail on a single failed command
+set -eo pipefail
+
 DIR=${DEPLOY_DIR:-/deployments}
 echo "Checking *.war in $DIR"
 if [ -d $DIR ]; then
