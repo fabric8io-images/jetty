@@ -24,3 +24,10 @@ The agent is installed as `/opt/agent-bond/agent-bond.jar` and enables the follo
 You can influence the behaviour of `agent-bond-opts` by setting various environment variables:
 
 {{= fp.block('agent-bond','readme',{ 'fp-no-files' : true }) }}
+
+### Debugging
+
+You can enable remote debugging by setting `JAVA_DEBUG` to any value:
+
+* **JAVA_DEBUG** If set remote debugging will be switched on
+* **JAVA_DEBUG_PORT** Port used for remote debugging. Default: 5005

@@ -59,3 +59,12 @@ Some options for integration in various environments:
 * **AB_JMX_EXPORTER_OPTS** : Configuration to use for `jmx_exporter` (in the format `<port>:<path to config>`)
 * **AB_JMX_EXPORTER_PORT** : Port to use for the JMX Exporter. Default: `9779`
 * **AB_JMX_EXPORTER_CONFIG** : Path to configuration to use for `jmx_exporter`: Default: `/opt/agent-bond/jmx_exporter_config.json`
+
+
+
+### Debugging
+
+You can enable remote debugging by setting `JAVA_DEBUG` to any value:
+
+* **JAVA_DEBUG** If set remote debugging will be switched on
+* **JAVA_DEBUG_PORT** Port used for remote debugging. Default: 5005
