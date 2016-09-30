@@ -18,8 +18,7 @@ RUN curl {{= fp.config.version.downloadUrl }} -o /tmp/jetty.tar.gz \
  && chown -R jboss /opt/jetty /opt/jetty-distribution-${JETTY_VERSION} \
  && usermod -g root -G jboss jboss \
  && chmod -R "g+rwX" /opt/jetty /opt/jetty-distribution-${JETTY_VERSION} \
- && chown -R jboss:root /opt/jetty /opt/jetty-distribution-${JETTY_VERSION}
-
+ && chown -R jboss:root /opt/jetty /opt/jetty-distribution-${JETTY_VERSION} \
  && rm /tmp/jetty.tar.gz
 
 # Startup script & permissions for OpenShift
