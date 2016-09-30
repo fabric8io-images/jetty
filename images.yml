@@ -2,7 +2,7 @@
 fish-pepper:
   params:
     - "version"
-  build: "1.1.9"
+  build: "1.1.10"
   name: "fabric8/jetty"
 
 config:
