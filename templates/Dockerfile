@@ -18,10 +18,14 @@ RUN curl {{= fp.config.version.downloadUrl }} -o /tmp/jetty.tar.gz \
  && chown -R jboss /opt/jetty /opt/jetty-distribution-${JETTY_VERSION} \
  && rm /tmp/jetty.tar.gz
 
-# Startup script
+# Startup script & permissions for OpenShift
 ADD deploy-and-run.sh /opt/jetty/bin/
 ADD jetty-logging.xml /opt/jetty/etc/
-RUN chmod a+x /opt/jetty/bin/deploy-and-run.sh
+RUN chmod a+x /opt/jetty/bin/deploy-and-run.sh \
+ && chown -R jboss /opt/jetty \
+ && usermod -g root -G jboss jboss \
+ && chmod -R "g+rwX" /opt/jetty \
+ && chown -R jboss:root /opt/jetty
 
 {{= fp.block("run-java-sh","copy-options",{dest: "/opt/"}) }}
 
