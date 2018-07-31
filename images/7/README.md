@@ -7,7 +7,7 @@ During startup a directory specified by the environment variable `DEPLOY_DIR` (*
 Features:
 
 * Jetty Version: **7.6.21.v20160908**
-* Java Base Image: **jboss/base-jdk:8**
+* Java Base Image: **fabric8/java-centos-openjdk8-jdk:1.5.1**
 * Port: **8080**
 * Command: `/opt/jetty/bin/deploy-and-run.sh` which links .war files from */maven* to */opt/jetty/webapps* and then calls `/opt/jetty/bin/jetty.sh run`
 * Sets `-Djava.security.egd=file:/dev/./urandom` for faster startup times (though a bit less secure).

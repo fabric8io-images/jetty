@@ -1,10 +1,10 @@
-FROM jboss/base-jdk:8
+FROM fabric8/java-centos-openjdk8-jdk:1.5.1
 
 MAINTAINER rhuss@redhat.com
 
 EXPOSE 8080
 
-ENV JETTY_VERSION 9.4.9.v20180320
+ENV JETTY_VERSION 9.4.11.v20180605
 ENV DEPLOY_DIR /deployments
 ENV JAVA /usr/bin/java
 

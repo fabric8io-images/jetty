@@ -2,7 +2,7 @@
 fish-pepper:
   params:
     - "version"
-  build: "1.4.0"
+  build: "1.5.0"
   name: "fabric8/jetty"
 
 config:
@@ -10,9 +10,9 @@ config:
     default:
       downloadUrl: "http://repo1.maven.org/maven2/org/eclipse/jetty/jetty-distribution/${JETTY_VERSION}/jetty-distribution-${JETTY_VERSION}.tar.gz"
       from:
-        image: "jboss/base-jdk:8"
+        image: "fabric8/java-centos-openjdk8-jdk:1.5.1"
     9:
-      version: "9.4.9.v20180320"
+      version: "9.4.11.v20180605"
     8:
       version: "8.1.21.v20160908"
     7:

@@ -1,4 +1,4 @@
-FROM jboss/base-jdk:8
+FROM fabric8/java-centos-openjdk8-jdk:1.5.1
 
 MAINTAINER rhuss@redhat.com
 
