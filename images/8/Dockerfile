@@ -35,11 +35,6 @@ ADD deploy-and-run.sh /opt/jetty/bin/
 ADD jetty-logging.xml /opt/jetty/etc/
 RUN chmod a+x /opt/jetty/bin/deploy-and-run.sh
 
-# Add run script as /opt/run-java.sh and make it executable
-COPY run-java.sh /opt/
-RUN chmod 755 /opt/run-java.sh
-
-
 ENV JETTY_HOME /opt/jetty
 ENV PATH $PATH:$JETTY_HOME/bin
 

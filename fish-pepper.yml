@@ -18,7 +18,3 @@ blocks:
   - type: "git"
     url: "https://github.com/fabric8io/agent-bond.git"
     tag: "v1.2.0"
-  # run-java.sh for getting container specific java-options
-  - type: "git"
-    url: "https://github.com/fabric8io-images/run-java-sh.git"
-    tag: "v1.2.2"
